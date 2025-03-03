@@ -1,6 +1,6 @@
 # Tour Booking API & Web Application
 
-A full-stack application built with Node.js, Express, and MongoDB, featuring a REST API for tour management and a server-rendered website with secure payments and authentication.
+A full-stack application built with Node.js, Express, and MongoDB, featuring a REST API for tour booking and a server-rendered website with secure payments and authentication.
 
 ## Key Features
 
