@@ -22,8 +22,8 @@ exports.uploadTourImages = upload.fields([
   { name: 'images', maxCount: 3 },
 ]);
 
-exports.resizeTourImages = async (req, res, next) => {
-  console.log(req.files.images);
+exports.resizeTourImages = catchAsync(async (req, res, next) => {
+  // console.log(req.files.images);
   if (!req.files.imageCover || !req.files.images) return next();
 
   // 1) Cover Image
@@ -56,7 +56,7 @@ exports.resizeTourImages = async (req, res, next) => {
   );
 
   next();
-};
+});
 
 exports.aliasTopTours = (req, res, next) => {
   req.query.sort = '-ratingsAverage,price';
