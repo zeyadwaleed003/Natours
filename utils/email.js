@@ -12,16 +12,24 @@ module.exports = class Email {
 
   newTrasnporter() {
     if (process.env.NODE_ENV === 'production') {
-      // SendGrid
-      return 1;
+      // brevo
+      return nodemailer.createTransport({
+        // service: 'brevo',
+        host: process.env.SENDINBLUE_HOST,
+        port: process.env.SENDINBLUE_PORT,
+        auth: {
+          user: process.env.SENDINBLUE_USERNAME,
+          pass: process.env.SENDINBLUE_PASSWORD,
+        },
+      });
     }
 
     return nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
+      host: process.env.MAILTRAP_HOST,
+      port: process.env.MAILTRAP_PORT,
       auth: {
-        user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD,
+        user: process.env.MAILTRAP_USERNAME,
+        pass: process.env.MAILTRAP_PASSWORD,
       },
     });
   }
