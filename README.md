@@ -30,9 +30,9 @@ A full-stack application built with Node.js, Express, and MongoDB, featuring a R
 
 ## API Highlights
 
-| Endpoint                     | Method | Description           |
-| ---------------------------- | ------ | --------------------- |
-| `/api/v1/tours`              | GET    | Get filtered tours    |
-| `/api/v1/tours/tours-within` | GET    | Geospatial queries    |
-| `/api/v1/users/signup`       | POST   | User registration     |
-| `/api/v1/bookings`           | POST   | Create Stripe payment |
+| Endpoint                     | Method | Description        |
+| ---------------------------- | ------ | ------------------ |
+| `/api/v1/tours`              | GET    | Get filtered tours |
+| `/api/v1/tours/tours-within` | GET    | Geospatial queries |
+| `/api/v1/users/signup`       | POST   | User registration  |
+| `/api/v1/bookings`           | GET    | Get all bookings   |
