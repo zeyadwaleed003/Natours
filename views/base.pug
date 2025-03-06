@@ -9,7 +9,7 @@ html
             link(href='/img/favicon.png' rel='shortcut icon' type='image/png')
             title Natours | #{title}
         
-    body 
+    body(data-alert=`${alert? alert: ''}`)
         // HEADER
         include _header
 
@@ -25,3 +25,4 @@ html
         script(src='/js/logout.js')
         script(src='/js/updateSettings.js')
         script(src='/js/stripe.js')
+        script(src='/js/index.js')
