@@ -83,12 +83,12 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Limit requests from same API
-const limiter = rateLimit({
-  max: 100,
-  windowMs: 1 * 60 * 60 * 1000, // One Hour
-  message: 'Too many requests from this IP, please try again in one hour',
-});
-app.use('/api', limiter);
+// const limiter = rateLimit({
+//   max: 100,
+//   windowMs: 1 * 60 * 60 * 1000, // One Hour
+//   message: 'Too many requests from this IP, please try again in one hour',
+// });
+// app.use('/api', limiter);
 
 // Body parser, reading data from body into req.body
 // data larger than 10kb won't be accepted
