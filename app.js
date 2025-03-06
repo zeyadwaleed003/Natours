@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-const rateLimit = require('express-rate-limit');
+// const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
@@ -17,6 +17,8 @@ const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
+
+const bookingController = require('./controllers/bookingController');
 
 const app = express();
 
@@ -102,6 +104,14 @@ if (process.env.NODE_ENV === 'development') {
 //   message: 'Too many requests from this IP, please try again in one hour',
 // });
 // app.use('/api', limiter);
+
+app.post(
+  '/webhook-checkout',
+  express.raw({
+    type: 'application/json',
+  }),
+  bookingController.webhookCheckout,
+);
 
 // Body parser, reading data from body into req.body
 // data larger than 10kb won't be accepted
