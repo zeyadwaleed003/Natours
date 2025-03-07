@@ -33,7 +33,7 @@ A full-stack tour booking system featuring a REST API and server-rendered web in
 
 1. **Clone repository:**
    ```
-   git clone https://github.com/zeyadwaleed003/Natours.git
+   git clone https://github.com/zeyadwaleed003/Natours
    ```
 2. **Initialize a Package.json File (if not already done):**
    ```
